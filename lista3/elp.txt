@@ -1,0 +1,16 @@
+1. 
+	Gradienty dla obrazów - zmiana intensywności kolorów
+	Sobel - filtr splotowy, kombinacja filtru Gaussa (odszumianie) i pochodnej pierwszego rzędu
+	Dla operatora Sobela gradient liczy się w kierunkach x i y (poziomy i pionowy)
+2.
+	Efekt spaghetti - duzo krótkich krawędzi, które nie są odrzucane
+	Canny - 1) filtr Gaussa, 2) operatory Sobela do gradientu, 3) Histereza i progowanie
+	Progi: górny - krawędzie, dolny - odrzucamy, pomiędzy - kawędz jeśli sąsiaduje z inną dobrą krawędzią
+3.
+	Wyrównanie histogramu - rozrzut kolorów po całej skali jasności, poprawia kontrast
+	Zbliżamy do rozkładu jednostajnego
+4. 	
+	Transformacja do rozkładu docelowego - chcemy dopasowac histogram do innego rozkładu
+	Lut - tablica definiująca jak wartośc intensywności na obrazie będzie przekształcona
+	Transformacja log - rozciąga ciemniejsze brawy (obraz jaśniejszy)
+	Exp - rozciąga jasne brawy (obraz ciemniejszy)

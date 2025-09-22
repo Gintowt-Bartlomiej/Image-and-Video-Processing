@@ -1,0 +1,30 @@
+H - odcień.  Jaki to kolor?
+S - saturacja/nasycenie. Jak intensywny jest ten kolor?
+V - jasność/wartość.  Jak jasny jest ten kolor?
+
+Convex Hull - wypukła otoczka konturu. wygładza nieregularności, dając wypukły kształt
+
+Hough (hafa) transform
+1) rho - rozdzielczość akumulatora, [piksel] jak doładnie mierzymy odległość od punktu do prostej.
+- W raz z ze zwiekszaniem rho, zwiększa się dokładność pomiaru odległości punktu od prostej. - możliwie wiecej prostych
+
+2) theta - rozdzielczość. Wartości z przedziału [0, pi]. Kąt pod jakim prosta jest nachylona do osi x.
+- W raz ze zwiększaniem theta, zmniejszmy dokładność pomiaru kąta nachylenia prostej do osi x. - mniej różnych prostych
+
+3) threshold - próg, liczba punktów, które muszą być na linii.
+- mniej = wiecej prostch
+
+Linia: Parametry to nachylenie i przesunięcie.
+Okrąg: Parametry to współrzędne środka i promień.
+
+
+Erozja zmniejsza obszary białe (jasne) w obrazie binarnym, "zjadając" piksele na krawędziach białych obiektów. 
+Działa na zasadzie przesuwania elementu strukturalnego po obrazie i zastępowania wartości piksela 
+wartością minimalną (dla binarnych obrazów oznacza to zazwyczaj 0, czyli kolor czarny).
+-Usuwanie drobnych szumów.
+-Oddzielanie połączonych obiektów.
+
+Dylatacja powiększa obszary białe (jasne) w obrazie binarnym, "dodając" białe piksele na krawędziach. Działa poprzez przesuwanie elementu strukturalnego
+ po obrazie i zastępowanie wartości piksela wartością maksymalną (dla binarnych obrazów oznacza to zazwyczaj 1, czyli kolor biały).
+-Dylatacja rozszerza obiekt.
+-Erozja przywraca pierwotny rozmiar, pozostawiając tylko grubsze krawędzie.
